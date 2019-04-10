@@ -1,1 +1,235 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    background-image: url("images/background-gradovi/podgorica.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
 
+.container {
+    margin: auto;
+    width: 100%;
+    background: linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9);
+    /* NIGHT
+    background: linear-gradient(to top, #2980b9, #2c3e50);
+    */
+    opacity: .9;
+}
+
+.grad, .prognoza, .sat, .danas, .danas-p, .naredni-dani, .izvestaj, .dnevni, .nedeljni {
+    display: flex;
+}
+
+.container, .padajuci-meni, .padajuci-sadrzaj, .prognoza, .danas, .naredni-dani-p, .dnevni, .nedeljni {
+    border-radius: 3px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.naslov {
+    text-align: center;
+    font-size: 2em;
+    padding: 5px 20px;
+}
+
+.padajuci-wrap {
+    position: relative;
+    margin: auto;
+    width: 210px;
+    font-size: 1.3em;
+}
+
+.padajuci-meni {
+    text-align: center;
+    margin-bottom: 0;
+    padding: 0 10px;
+}
+
+.padajuci-sadrzaj {
+    display: none;
+    width: 180px;
+    position: absolute;
+    padding: 16px 16px;
+    text-align: left;
+    z-index: 1;
+    background: linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9);
+}
+
+.padajuci-wrap:hover .padajuci-sadrzaj {
+    display: block;
+}
+
+.grad {
+    justify-content: space-between;
+    padding: 5px;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(.19, -0.46, .76, 1.43);
+    transition-property: background-color, transform, border-radius;
+}
+
+.zastava {
+    padding-left: 20px;
+}
+
+.grad:hover {
+    background-color: #008CBA;
+    border-radius: 3px;
+    transform: scale(1.3);
+}
+
+/* div PROGNOZA */
+
+.prognoza {
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+.dan, .datum {
+    font-size: 1em;
+    padding: 0;
+    margin: 3px;
+}
+
+.sat {
+    align-items: center;
+}
+
+.tacno-vreme {
+    padding-left: 5px;
+}
+
+.trenutni-grad {
+    font-size: 1.3em;
+}
+
+.stepeni {
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+}
+
+.stanje {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* div DANAS */
+
+.danas {
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+.danas img {
+    width: 32px;
+}
+
+.danas-p {
+    align-items: center;
+}
+
+.danas-p span {
+    padding: 10px
+}
+
+/* div 5 dana */
+
+.naredni-dani {
+    justify-content: space-between;
+}
+
+.naredni-dani img {
+    width: 40px;
+}
+
+.naredni-dani-p {
+    text-align: center;
+    width: 18%;
+}
+
+/* Izvestaj slider */
+
+.izvestaj {
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+
+.dnevni, .nedeljni {
+    justify-content: center;
+    position: relative;
+    width: 50%;
+}
+
+.nedeljni {
+    margin-left: 10px;
+}
+
+.dnevni {
+    margin-right: 10px;
+}
+
+.ikonica-izvestaj {
+    height: 40px;
+}
+
+.tekst-danas, .tekst-nedeljni {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #008CBA;
+    border-radius: 3px;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease-out;
+}
+
+.dnevni:hover .tekst-danas, .nedeljni:hover .tekst-nedeljni {
+    height: 100%;
+}
+
+.tekst {
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+footer {
+    line-height: 2.5em;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+.prognoza, .danas, .naredni-dani, .izvestaj, footer {
+    margin: 10px 20px;
+}
+
+@media (min-width: 450px) {
+    .container {
+        width: 450px;
+    }
+    .prognoza, .danas {
+        justify-content: space-between;
+    }
+    .prognoza, .danas {
+        font-size: 1.2em;
+    }
+    .stepeni {
+        font-size: 3em;
+    }
+    .trenutni-grad {
+        font-size: 1.5em;
+    }
+}
