@@ -1,0 +1,224 @@
+{
+    "200": {
+      "label": "Slaba kiša praćena grmljavinom"
+    },
+  
+    "201": {
+      "label": "Kiša praćena grmljavinom"
+    },
+  
+    "202": {
+      "label": "Jaka kiša praćena grmljavinom"
+    },
+  
+    "210": {
+      "label": "Blaga oluja"
+    },
+  
+    "211": {
+      "label": "Oluja"
+    },
+  
+    "212": {
+      "label": "Jaka oluja"
+    },
+  
+    "221": {
+      "label": "Opasna oluja"
+    },
+  
+    "230": {
+      "label": "Slaba sipeća kiša praćena grmljavinom"
+    },
+  
+    "231": {
+      "label": "Kišica praćena grmljavinom"
+    },
+  
+    "232": {
+      "label": "Jaka sipeća kiša praćena grmljavinom"
+    },
+  
+    "300": {
+      "label": "Intenzivna sipeća kiša"
+    },
+  
+    "301": {
+      "label": "Sipeća kiša - rosulja"
+    },
+  
+    "302": {
+      "label": "Intenzivna rosulja"
+    },
+  
+    "310": {
+      "label": "Slaba sipeća kiša"
+    },
+  
+    "311": {
+      "label": "Sipeća kiša"
+    },
+  
+    "312": {
+      "label": "Intenzivna sipeća kiša"
+    },
+  
+    "313": {
+      "label": "Jaka kiša i rosulja"
+    },
+  
+    "314": {
+      "label": "Slaba kiša ili lokalni pljusak"
+    },
+  
+    "321": {
+      "label": "Povremena kišica"
+    },
+  
+    "500": {
+      "label": "Slaba kiša"
+    },
+  
+    "501": {
+      "label": "Umerena kiša"
+    },
+  
+    "502": {
+      "label": "Intenzivni pljuskovi"
+    },
+  
+    "503": {
+      "label": "Veoma jaka kiša"
+    },
+  
+    "504": {
+      "label": "Ekstremna kiša"
+    },
+  
+    "511": {
+      "label": "Ledena kiša"
+    },
+  
+    "520": {
+      "label": "Slabi pljuskovi"
+    },
+  
+    "521": {
+      "label": "Pljuskovi"
+    },
+  
+    "522": {
+      "label": "Jaki pljuskovi"
+    },
+  
+    "531": {
+      "label": "Mestimični pljuskovi"
+    },
+  
+    "600": {
+      "label": "Slab sneg"
+    },
+  
+    "601": {
+      "label": "Sneg"
+    },
+  
+    "602": {
+      "label": "Mećava"
+    },
+  
+    "611": {
+      "label": "Susnežica"
+    },
+  
+    "612": {
+      "label": "Jaka susnežica"
+    },
+
+    "613": {
+      "label": 	"Jak grad"
+    },
+  
+    "615": {
+      "label": "Slaba kiša i sneg"
+    },
+  
+    "616": {
+      "label": "Kiša i sneg"
+    },
+  
+    "620": {
+      "label": "Slab sneg"
+    },
+  
+    "621": {
+      "label": "Povremeno jak sneg"
+    },
+  
+    "622": {
+      "label": "Jak sneg"
+    },
+  
+    "701": {
+      "label": "Izmaglica"
+    },
+  
+    "711": {
+      "label": "Smog"
+    },
+  
+    "721": {
+      "label": "Izmaglica"
+    },
+  
+    "731": {
+      "label": "Peščana oluja"
+    },
+  
+    "741": {
+      "label": "Magla"
+    },
+  
+    "751": {
+      "label": "Pesak"
+    },
+  
+    "761": {
+      "label": "Prašina"
+    },
+  
+    "762": {
+      "label": "Vulkanska prašina"
+    },
+  
+    "771": {
+      "label": "Olujni vetar"
+    },
+  
+    "781": {
+      "label": "Tornado"
+    },
+  
+    "800": {
+      "label": "Vedro"
+    },
+  
+    "801": {
+      "label": "Uglavno vedro"
+    },
+  
+    "802": {
+      "label": "Delimično oblačno"
+    },
+  
+    "803": {
+      "label": "Uglavnom oblačno"
+    },
+  
+    "804": {
+      "label": "Oblačno"
+    }
+}
+  
+  
+   
