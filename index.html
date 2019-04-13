@@ -20,11 +20,11 @@
     <div class="container">
         <h1 class="naslov">Vremenska prognoza <br> Ex-YU</h1>
         <div class="padajuci-wrap">
-            <div class="padajuci-meni">
+            <div class="padajuci-meni" id="prikazi">
                 <span>Izaberite grad</span>
                 <sub><img src="images/strelica.png" alt="strelica"></sub>
             </div>
-            <div class="padajuci-sadrzaj">
+            <div class="padajuci-sadrzaj" id="sakrij">
                 <div class="grad" id="beograd">
                     <span>Beograd</span>
                     <span class="zastava"><img src="images/zastave/srbija.png" alt="srbija_zastava"></span>
@@ -54,22 +54,22 @@
         
         <div class="prognoza">
             <div>
-                <p class="trenutni-grad" id="trenutni-grad">Beograd</p>
-                <p class="dan" id="dan">Ponedeljak</p>
-                <p class="datum" id="datum">04.03.2019.</p>
+                <p class="trenutni-grad" id="trenutni-grad"></p>
+                <p class="dan" id="dan"></p>
+                <p class="datum" id="datum"></p>
                 <div class="sat">
                     <p><img src="images/sat.png" alt="sat"> </p>
-                    <p class="tacno-vreme" id="tacno-vreme">19:03</p>
+                    <p class="tacno-vreme" id="tacno-vreme"></p>
                 </div>
             </div>
             <div>
-                <p class="stepeni" id="stepeni">20C</p>
-                <p class="stanje" id="stanje-ikonica"> <img src="images/icons/sunrise.png" alt="ikonica-vreme"></p>
-                <p class="stanje" id="stanje-tekst">Delimično oblačno</p>
+                <p class="stepeni" id="stepeni"></p>
+                <p class="stanje" id="stanje-ikonica"></p>
+                <p class="stanje" id="stanje-tekst"></p>
             </div>
         </div>
-        <div class="danas">
-            <div>
+        <div class="danas" id="danas-detalji">
+            <!-- <div>
                 <div class="danas-p">
                     <img src="images/icons/humidity.png" alt="vlaznost">
                     <span id="vlaznost"> Vlažnost</span>
@@ -92,7 +92,7 @@
                     <img src="images/icons/sunset.png" alt="sunset">
                     <span id="zalazak">17:25</span>
                 </div>
-            </div>
+            </div> -->
 
         </div>
         <div class="naredni-dani">
@@ -131,13 +131,13 @@
             <div class="dnevni">
                 <img src="images/icons/today.png" alt="kalendar-danas" class="ikonica-izvestaj">
                 <div class="tekst-danas">
-                    <p class="tekst">danas</p>
+                    <p class="tekst" id="slide-today">Danas</p>
                 </div>
             </div>
             <div class="nedeljni">
                 <img src="images/icons/week.png" alt="kalendar-5" class="ikonica-izvestaj">
                 <div class="tekst-nedeljni">
-                    <p class="tekst">5 dana</p>
+                    <p class="tekst" id="slide-five">5 dana</p>
                 </div>
             </div>
 
@@ -146,9 +146,7 @@
             <p>Powered by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap.org</a></p>
         </footer>
     </div>
-    
     <script src="main.js"></script>
-
 </body>
 
 </html>
