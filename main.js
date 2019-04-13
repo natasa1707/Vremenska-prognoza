@@ -59,7 +59,7 @@ for (let i in grad) {
 // funkcija za prikupljanje podataka sa API
 const apiKey = 'APPID=f3244c91de515a8afa5193b51dba61d0';
 function getAPIDay(city){
-    $.getJSON(`http://api.openweathermap.org/data/2.5/weather?q=${city}&${apiKey}`,
+    $.getJSON(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city}&${apiKey}`,
         function(info){
             console.log(info)
             time(info.dt);
