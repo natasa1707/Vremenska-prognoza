@@ -22,9 +22,18 @@ let gradoviSRP = ["Beograd", "Ljubljana", "Skoplje", "Sarajevo", "Zagreb", "Podg
 let gradoviEN = ["Belgrade,RS", "Ljubljana,SI", "Skopje,MK", "Sarajevo,BA", "Zagreb,HR", "Podgorica,ME"];
 
 let grad = document.getElementsByClassName('grad');
+let danasDetaljnije = document.getElementById("danas-detalji");
+let naredniDetaljnije = document.getElementById("naredni-detaljnije");
+let tempC = document.getElementById('stepeni'); // temperetura u C u prvom DIV-u
+let wetherIcon = document.getElementById('stanje-ikonica'); // ikonica u prvom DIV-u
 
 // ucitavanjem stranice prikazuje se prognoza za Beograd
 window.onload = function(){
+    //sakrij div danas-detaljnije
+    danasDetaljnije.style.display = "none";
+
+    //sakrij div naredni-detaljnije
+    naredniDetaljnije.style.display = "none";
     // Beograd
     trenutniGrad.innerHTML = gradoviSRP[0];
     // pozadina za Beograd
@@ -44,6 +53,12 @@ for (let i in grad) {
         document.getElementById("sakrij").onmouseleave = function(){
             document.getElementById("sakrij").style.display = "none";
         };
+
+        //sakrij danas-detaljnije
+        danasDetaljnije.style.display = "none";
+         //sakrij div naredni-detaljnije
+         naredniDetaljnije.style.display = "none";
+          
       
         // GRAD
         trenutniGrad.innerHTML = gradoviSRP[i];
@@ -56,60 +71,81 @@ for (let i in grad) {
 }
 
 
-// funkcija za prikupljanje podataka sa API
+// funkcija za prikupljanje podataka sa API za danasnji dan
 const apiKey = 'APPID=f3244c91de515a8afa5193b51dba61d0';
 function getAPIDay(city){
     $.getJSON(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=${city}&${apiKey}`,
         function(info){
             console.log(info)
-            time(info.dt);
-            celsius(info.main.temp)
-            icon(info.weather[0].icon)
+            danasnjiDan.innerHTML = timeDay(info.dt)
+            danasnjiDatum.innerText = timeDate(info.dt);
+            tempC.innerHTML = celsius(info.main.temp)
+            wetherIcon.innerHTML = icon(info.weather[0].icon, info.weather[0].description);
             stanje(info.weather[0].id)
             danasDetails(info)
             
         });
 }
 
+// funkcija za prikupljanje podataka sa API za narednih 5 dana
 function getAPI(city) {
     $.getJSON(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/forecast?q=${city}&${apiKey}`,
         function (data) {
             console.log(data)
+            naredniDetails(data)
            
 
         });
         
 }
 
-function time(podatakT){
+// dan u nedelji
+function timeDay(podatakT){
     let datumMS = new Date(podatakT * 1000);
     const days = ['Nedelja','Ponedeljak','Utorak','Sreda','Četvrtak','Petak','Subota'];
-    danasnjiDan.innerHTML = days[datumMS.getDay()];
-       
+    return days[datumMS.getDay()];
+}
+
+// dan u nedelji ** skraceno
+function timeDay2(podatakT){
+    let datumMS = new Date(podatakT * 1000);
+    const days = ['NED','PON','UTO','SRE','ČET','PET','SUB'];
+    return days[datumMS.getDay()];
+}
+// datum
+function timeDate(podatakTD){
+    let datumMS = new Date(podatakTD * 1000);
     let dd = datumMS.getDate();
     let mm = datumMS.getMonth() + 1;
     let yy = datumMS.getFullYear();
-    danasnjiDatum.innerText = `${dd}.${mm}.${yy}.`;
+    return `${dd}.${mm}.${yy}.`;
+}
+
+// datum ** skraceno
+function timeDate2(podatakTD){
+    let datumMS = new Date(podatakTD * 1000);
+    let dd = datumMS.getDate();
+    let mm = datumMS.getMonth() + 1;
+    let yy = datumMS.getFullYear();
+    return `${dd}.${mm}.`;
 }
 
 //stepeni u C
-let tempC = document.getElementById('stepeni');
 function celsius(podatakK){
             let tempK = podatakK;
-            tempC.innerText = `${(tempK - 273.15).toFixed()}°C`;
+            return `${(tempK - 273.15).toFixed()}°C`;
 }
 
 // ikonica
-let wetherIcon = document.getElementById('stanje-ikonica');
-function icon(podatakI){
-    let description = podatakI;
-    wetherIcon.innerHTML = `<img src="images/icons/${podatakI}.png" alt="${description}">`;
+function icon(podatakI1, podatakI2){
+    return `<img src="images/icons/${podatakI1}.png" alt="${podatakI2}">`;
 }
+
 
 // kratak opis vremenskih uslova
 let innerDescription = document.getElementById('stanje-tekst');
 function stanje(podatakS){
-    $.getJSON('conditions.json',
+    $.getJSON("conditions.js",
     function(id){
         for (let i in id) {
             if (podatakS == i) {
@@ -121,13 +157,13 @@ function stanje(podatakS){
 }
 let slideToday = document.getElementById("slide-today");
 let slideFive = document.getElementById("slide-five");
-document.getElementById("danas-detalji").style.display = "none";
+
 
 function danasDetails(podatakD){
     slideToday.onclick = function(){
-        console.log(podatakD.sys.sunrise)
-        document.getElementById("danas-detalji").style.display = "flex";
-        document.getElementById("danas-detalji").innerHTML = `<div>
+        naredniDetaljnije.style.display = "none";
+        danasDetaljnije.style.display = "flex";
+        danasDetaljnije.innerHTML = `<div>
         <div class="danas-p">
             <img src="images/icons/humidity.png" alt="vlaznost">
             <span id="vlaznost">${podatakD.main.humidity} %</span>
@@ -142,6 +178,10 @@ function danasDetails(podatakD){
         </div>
     </div>
     <div>
+        <div class="danas-p">
+            <img src="images/icons/visibility.png" alt="sunrise">
+            <span id="izlazak">${Math.round(podatakD.visibility/1000)} km</span>
+        </div>
         <div class="danas-p">
             <img src="images/icons/sunrise.png" alt="sunrise">
             <span id="izlazak">${izlazakSunca(podatakD.sys.sunrise)}</span>
@@ -176,6 +216,23 @@ function zalazakSunca(podatakSunset){
     minutes = (minutes < 10) ? "0" + minutes : minutes;
     
     return `${hours}:${minutes}`;
+}
+
+function naredniDetails(podatakN){
+    slideFive.onclick = function(){
+        naredniDetaljnije.innerHTML = " ";
+        danasDetaljnije.style.display = "none";
+        naredniDetaljnije.style.display = "flex";
+        for(let i = 7; i < podatakN.list.length; i += 8){
+            naredniDetaljnije.innerHTML += `<div class="naredni-dani-p">
+            <p>${timeDay2(podatakN.list[i].dt)}</p>
+            <p>${timeDate2(podatakN.list[i].dt)}</p>
+            <p>${icon(podatakN.list[i].weather[0].icon, podatakN.list[i].weather[0].desription)}</p>
+            <p>${celsius(podatakN.list[i].main.temp)}</p>
+        </div>`
+        }
+
+    }
 }
 
 
