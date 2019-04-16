@@ -145,7 +145,7 @@ function icon(podatakI1, podatakI2){
 // kratak opis vremenskih uslova
 let innerDescription = document.getElementById('stanje-tekst');
 function stanje(podatakS){
-    $.getJSON("conditions.js",
+    $.getJSON("conditions.json",
     function(id){
         for (let i in id) {
             if (podatakS == i) {
