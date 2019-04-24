@@ -7,180 +7,178 @@ body {
     font-weight: 900;
 }
 
+/****** central container ******/
+
 .container {
     margin: auto;
     width: 100%;
     background: linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9);
-    /* NIGHT
-    background: linear-gradient(to top, #2980b9, #2c3e50);
-    */
     opacity: .9;
 }
 
-.grad, .prognoza, .sat, .danas, .danas-p, .naredni-dani, .izvestaj, .dnevni, .nedeljni {
+/****** combine elements ******/
+
+.flexbox {
     display: flex;
 }
 
-.container, .padajuci-meni, .padajuci-sadrzaj, .prognoza, .danas, .naredni-dani-p, .dnevni, .nedeljni {
+.borders {
     border-radius: 3px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.naslov {
+.center {
     text-align: center;
+}
+
+.city,
+.weather, 
+.today, 
+.five-days {
+    justify-content: space-between;
+}
+
+.caption, 
+.degrees {
     font-size: 2em;
+}
+
+.weather, 
+.clock, 
+.today, 
+.today-p {
+    align-items: center;
+}
+
+.caption, 
+.city {
     padding: 5px 20px;
 }
 
-.padajuci-wrap {
+/****** dropdown menu ******/
+
+.dropdown {
     position: relative;
     margin: auto;
-    width: 210px;
     font-size: 1.3em;
 }
 
-.padajuci-meni {
-    text-align: center;
+.dropdown-menu {
     margin-bottom: 0;
     padding: 0 10px;
 }
 
-.padajuci-sadrzaj {
+.dropdown-content {
     display: none;
-    width: 180px;
     position: absolute;
-    padding: 16px 16px;
     text-align: left;
     z-index: 1;
     background: linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9);
 }
 
-.padajuci-wrap:hover .padajuci-sadrzaj {
+.dropdown, 
+.dropdown-content {
+    width: 210px;
+}
+
+.dropdown:hover .dropdown-content {
     display: block;
 }
 
-.grad {
-    justify-content: space-between;
-    padding: 5px;
+.city {
     transition-duration: 1s;
     transition-timing-function: cubic-bezier(.19, -0.46, .76, 1.43);
     transition-property: background-color, transform, border-radius;
 }
 
-.zastava {
-    padding-left: 20px;
-}
-
-.grad:hover {
+.city:hover {
     background-color: #008CBA;
     border-radius: 3px;
     transform: scale(1.3);
 }
 
-/* div PROGNOZA */
+/****** weather container ******/
 
-.prognoza {
-    justify-content: space-between;
-    align-items: center;
+.weather {
     padding: 20px 30px;
 }
 
-.dan, .datum {
+.day, 
+.date {
     font-size: 1em;
-    padding: 0;
     margin: 3px;
 }
 
-.sat {
-    align-items: center;
-}
-
-.tacno-vreme {
+.exact-time {
     padding-left: 5px;
 }
 
-.trenutni-grad {
+.current-city {
     font-size: 1.3em;
 }
 
-.stepeni {
-    font-size: 2em;
-    text-align: center;
+.degrees, 
+.condition {
     margin: 0;
 }
 
-.stanje {
-    text-align: center;
-    margin: 0;
+.day, 
+.date, 
+.condition {
     padding: 0;
 }
 
-/* div DANAS */
+/****** today report ******/
 
-.danas {
-    justify-content: space-between;
-    align-items: center;
+.today {
     padding: 20px 30px;
 }
 
-.danas img {
-    width: 32px;
+.today-p {
+    padding: 7px 0;
 }
 
-.danas-p {
-    align-items: center;
+.today-p span {
+    padding: 10px;
 }
 
-.danas-p span {
-    padding: 10px
-}
+/****** 5-days report ******/
 
-/* div 5 dana */
-
-.naredni-dani {
-    justify-content: space-between;
-}
-
-.naredni-dani img {
+.five-days img {
     width: 40px;
 }
 
-.naredni-dani-p {
-    text-align: center;
+.five-days-p {
     width: 18%;
 }
 
-/* Izvestaj slider */
+/****** report slider ******/
 
-.izvestaj {
+.report {
     border-radius: 3px;
     text-transform: uppercase;
     font-size: 1.2em;
 }
 
-.dnevni, .nedeljni {
+.daily, 
+.weekly {
     justify-content: center;
     position: relative;
     width: 50%;
 }
 
-.nedeljni {
+.weekly {
     margin-left: 10px;
 }
 
-.dnevni {
+.daily {
     margin-right: 10px;
 }
 
-.ikonica-izvestaj {
-    height: 40px;
-}
-
-.tekst-danas, .tekst-nedeljni {
+.text-today, 
+.text-weekly {
     position: absolute;
     bottom: 0;
-    left: 0;
-    right: 0;
     background-color: #008CBA;
     border-radius: 3px;
     overflow: hidden;
@@ -189,46 +187,50 @@ body {
     transition: .5s ease-out;
 }
 
-.dnevni:hover .tekst-danas, .nedeljni:hover .tekst-nedeljni {
+.daily:hover .text-today, 
+.weekly:hover .text-weekly {
     height: 100%;
 }
 
-.tekst {
+.text {
     color: white;
     position: absolute;
-    top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
 }
+
+/****** footer ******/
 
 footer {
     line-height: 2.5em;
-    text-align: center;
 }
 
 footer a {
     text-decoration: none;
 }
 
-.prognoza, .danas, .naredni-dani, .izvestaj, footer {
+.weather, 
+.today, 
+.five-days, 
+.report, 
+footer {
     margin: 10px 20px;
 }
+
+/****** devices larger than 450px ******/
 
 @media (min-width: 450px) {
     .container {
         width: 450px;
     }
-    .prognoza, .danas {
-        justify-content: space-between;
-    }
-    .prognoza, .danas {
+    
+    .weather, .today {
         font-size: 1.2em;
     }
-    .stepeni {
+    .degrees {
         font-size: 3em;
     }
-    .trenutni-grad {
+    .current-city {
         font-size: 1.5em;
     }
 }
