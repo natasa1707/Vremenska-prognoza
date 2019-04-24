@@ -9,7 +9,7 @@
         content="Vremenska prognoza, Prognoza vremena, Vreme, Beograd, Sarajevo, Skoplje, Zagreb, Podgorica, Ljubljana">
     <meta name="author" content="Natasa Vukovic">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="images/favicon.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/icons/favicon.png" sizes="16x16" />
     <title>Vremenska prognoza</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -17,138 +17,89 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="naslov">Vremenska prognoza <br> Ex-YU</h1>
-        <div class="padajuci-wrap">
-            <div class="padajuci-meni" id="prikazi">
-                <span>Izaberite grad</span>
-                <sub><img src="images/strelica.png" alt="strelica"></sub>
-            </div>
-            <div class="padajuci-sadrzaj" id="sakrij">
-                <div class="grad" id="beograd">
-                    <span>Beograd</span>
-                    <span class="zastava"><img src="images/zastave/srbija.png" alt="srbija_zastava"></span>
-                </div>
-                <div class="grad" id="ljubljana">
-                    <span>Ljubljana</span>
-                    <span class="zastava"><img src="images/zastave/slovenija.png" alt="slovenija_zastava"></span>
-                </div>
-                <div class="grad" id="skoplje">
-                    <span>Skoplje</span>
-                    <span class="zastava"><img src="images/zastave/makedonija.png" alt="makedonija_zastava"></span>
-                </div>
-                <div class="grad" id="sarajevo">
-                    <span>Sarajevo</span>
-                    <span class="zastava"><img src="images/zastave/bih.png" alt="bih_zastava"></span>
-                </div>
-                <div class="grad" id="zagreb">
-                    <span>Zagreb</span>
-                    <span class="zastava"><img src="images/zastave/hrvatska.png" alt="hrvatska_zastava"></span>
-                </div>
-                <div class="grad" id="podgorica">
-                    <span>Podgorica</span>
-                    <span class="zastava"><img src="images/zastave/crna_gora.png" alt="crna_gora_zastava"></span>
-                </div>
-            </div>
-        </div>
-        
-        <div class="prognoza">
-            <div>
-                <p class="trenutni-grad" id="trenutni-grad"></p>
-                <p class="dan" id="dan"></p>
-                <p class="datum" id="datum"></p>
-                <div class="sat">
-                    <p><img src="images/sat.png" alt="sat"> </p>
-                    <p class="tacno-vreme" id="tacno-vreme"></p>
-                </div>
-            </div>
-            <div>
-                <p class="stepeni" id="stepeni"></p>
-                <p class="stanje" id="stanje-ikonica"></p>
-                <p class="stanje" id="stanje-tekst"></p>
-            </div>
-        </div>
-        <div class="danas" id="danas-detalji">
-            <!-- <div>
-                <div class="danas-p">
-                    <img src="images/icons/humidity.png" alt="vlaznost">
-                    <span id="vlaznost"> Vlažnost</span>
-                </div>
-                <div class="danas-p">
-                    <img src="images/icons/wind.png" alt="vetar">
-                    <span id="vetar">Vetar</span>
-                </div>
-                <div class="danas-p">
-                    <img src="images/icons/pressure.png" alt="pritisak">
-                    <span id="pritisak">Pritisak</span>
-                </div>
-            </div>
-            <div>
-                <div class="danas-p">
-                    <img src="images/icons/sunrise.png" alt="sunrise">
-                    <span id="izlazak">05:57</span>
-                </div>
-                <div class="danas-p">
-                    <img src="images/icons/sunset.png" alt="sunset">
-                    <span id="zalazak">17:25</span>
-                </div>
-            </div> -->
+    <div class="container borders">
 
-        </div>
-        <div class="naredni-dani" id="naredni-detaljnije" >
-            <!-- <div class="naredni-dani-p">
-                <p>PON</p>
-                <p>Datum</p>
-                <p><img src="images/icons/sunset.png" alt=""></p>
-                <p>10C</p>
-            </div>
-            <div class="naredni-dani-p">
-                <p>PON</p>
-                <p>Datum</p>
-                <p><img src="images/icons/sunset.png" alt=""></p>
-                <p>10C</p>
-            </div>
-            <div class="naredni-dani-p">
-                <p>PON</p>
-                <p>Datum</p>
-                <p><img src="images/icons/sunset.png" alt=""></p>
-                <p>10C</p>
-            </div>
-            <div class="naredni-dani-p">
-                <p>PON</p>
-                <p>Datum</p>
-                <p><img src="images/icons/sunset.png" alt=""></p>
-                <p>10C</p>
-            </div>
-            <div class="naredni-dani-p">
-                <p>PON</p>
-                <p>Datum</p>
-                <p><img src="images/icons/sunset.png" alt=""></p>
-                <p>10C</p>
-            </div> -->
-        </div>
-        <div class="izvestaj">
-            <div class="dnevni">
-                <img src="images/icons/today.png" alt="kalendar-danas" class="ikonica-izvestaj">
-                <div class="tekst-danas">
-                    <p class="tekst" id="slide-today">Danas</p>
-                </div>
-            </div>
-            <div class="nedeljni">
-                <img src="images/icons/week.png" alt="kalendar-5" class="ikonica-izvestaj">
-                <div class="tekst-nedeljni">
-                    <p class="tekst" id="slide-five">5 dana</p>
-                </div>
-            </div>
-        </div>
+        <h1 class="caption center">Vremenska prognoza <br> Ex-YU</h1>
         
-        <footer>
+        <div class="dropdown">
+            <div class="dropdown-menu center borders" id="show">
+                <span>Izaberite grad</span>
+                <sub><img src="images/icons/arrow.png" alt="strelica"></sub>
+            </div>
+            <div class="dropdown-content borders" id="hide">
+                <div class="city flexbox" id="beograd">
+                    <span>Beograd</span>
+                    <span><img src="images/flags/srbija.png" alt="srbija_zastava"></span>
+                </div>
+                <div class="city flexbox" id="ljubljana">
+                    <span>Ljubljana</span>
+                    <span><img src="images/flags/slovenija.png" alt="slovenija_zastava"></span>
+                </div>
+                <div class="city flexbox" id="skoplje">
+                    <span>Skoplje</span>
+                    <span><img src="images/flags/makedonija.png" alt="makedonija_zastava"></span>
+                </div>
+                <div class="city flexbox" id="sarajevo">
+                    <span>Sarajevo</span>
+                    <span><img src="images/flags/bih.png" alt="bih_zastava"></span>
+                </div>
+                <div class="city flexbox" id="zagreb">
+                    <span>Zagreb</span>
+                    <span><img src="images/flags/hrvatska.png" alt="hrvatska_zastava"></span>
+                </div>
+                <div class="city flexbox" id="podgorica">
+                    <span>Podgorica</span>
+                    <span><img src="images/flags/crna_gora.png" alt="crna_gora_zastava"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="weather flexbox borders">
+            <div>
+                <p class="current-city" id="current-city"></p>
+                <p class="day" id="day"></p>
+                <p class="date" id="date"></p>
+                <div class="clock flexbox">
+                    <p><img src="images/icons/clock.png" alt="sat"> </p>
+                    <p class="exact-time" id="exact-time"></p>
+                </div>
+            </div>
+            <div>
+                <p class="degrees center" id="degrees"></p>
+                <p class="condition center" id="condition-icon"></p>
+                <p class="condition center" id="condition-text"></p>
+            </div>
+        </div>
+
+        <div class="today flexbox borders" id="today-details"></div>
+
+        <div class="five-days flexbox borders" id="weekly-details"></div>
+
+        <div class="report flexbox">
+            <div class="daily flexbox borders" id="slider-today">
+                <img src="images/icons/today.png" alt="kalendar-danas">
+                <div class="text-today">
+                    <p class="text">Danas</p>
+                </div>
+            </div>
+            <div class="weekly flexbox borders" id="slider-five">
+                <img src="images/icons/week.png" alt="kalendar-5">
+                <div class="text-weekly">
+                    <p class="text">5 dana</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="center">
             <p>Powered by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap.org</a></p>
         </footer>
-        <p id="insert"></p>
+
     </div>
+
     <script src="main.js"></script>
+    
 </body>
+
 </html>
 
 
