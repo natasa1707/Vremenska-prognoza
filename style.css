@@ -164,6 +164,7 @@ footer {
     position: fixed;
     z-index: 1;
     padding-top: 20vh;
+    overflow: scroll;
     left: 0;
     top: 0;
     width: 100%;
