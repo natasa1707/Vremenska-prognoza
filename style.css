@@ -1,10 +1,11 @@
 body {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
+    font-weight: bold;
 }
 
 /****** central container ******/
@@ -12,26 +13,38 @@ body {
 .container {
     margin: auto;
     width: 100%;
-    background: linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9);
     opacity: .9;
 }
 
 /****** combine elements ******/
+
+.container,
+.dropdown-content,
+.modal-content {
+    background: linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9);
+}
 
 .flexbox {
     display: flex;
 }
 
 .borders {
-    border-radius: 3px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.borders, 
+.text-today, 
+.text-weekly, 
+.city:hover, 
+.report {
+    border-radius: 3px;
 }
 
 .center {
     text-align: center;
 }
 
-.city,
+.city, 
 .weather, 
 .today, 
 .five-days {
@@ -55,6 +68,18 @@ body {
     padding: 5px 20px;
 }
 
+.weather, 
+.today, 
+.report, 
+footer {
+    margin: 10px 20px;
+}
+
+.weather, 
+.today {
+    padding: 20px 30px;
+}
+
 /****** dropdown menu ******/
 
 .dropdown {
@@ -73,7 +98,6 @@ body {
     position: absolute;
     text-align: left;
     z-index: 1;
-    background: linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9);
 }
 
 .dropdown, 
@@ -93,15 +117,10 @@ body {
 
 .city:hover {
     background-color: #008CBA;
-    border-radius: 3px;
     transform: scale(1.1);
 }
 
 /****** weather container ******/
-
-.weather {
-    padding: 20px 30px;
-}
 
 .day, 
 .date {
@@ -130,10 +149,6 @@ body {
 
 /****** today report ******/
 
-.today {
-    padding: 20px 30px;
-}
-
 .today-p {
     padding: 7px 0;
 }
@@ -144,18 +159,58 @@ body {
 
 /****** 5-days report ******/
 
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    padding-top: 20vh;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    padding-right: 10px;
+    color: darkmagenta;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.close:hover, 
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.five-days {
+    padding: 30px;
+    font-size: 1.3em;
+}
+
 .five-days img {
     width: 40px;
 }
 
 .five-days-p {
     width: 18%;
+    margin: auto;
 }
 
 /****** report slider ******/
 
 .report {
-    border-radius: 3px;
     text-transform: uppercase;
     font-size: 1.2em;
 }
@@ -180,7 +235,6 @@ body {
     position: absolute;
     bottom: 0;
     background-color: #008CBA;
-    border-radius: 3px;
     overflow: hidden;
     width: 100%;
     height: 0;
@@ -209,21 +263,12 @@ footer a {
     text-decoration: none;
 }
 
-.weather, 
-.today, 
-.five-days, 
-.report, 
-footer {
-    margin: 10px 20px;
-}
-
-/****** devices larger than 450px ******/
+/****** media queries ******/
 
 @media (min-width: 450px) {
     .container {
         width: 450px;
     }
-    
     .weather, .today {
         font-size: 1.2em;
     }
@@ -232,5 +277,26 @@ footer {
     }
     .current-city {
         font-size: 1.5em;
+    }
+    .five-days {
+        font-size: 1.8em;
+    }
+    .five-days img {
+        width: 80%;
+    }
+    .modal-content {
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px) {
+    .modal-content{
+        width: 80%;
+    }
+}
+
+@media (min-width: 1224px) {
+    .modal-content{
+        width: 50%;
     }
 }
