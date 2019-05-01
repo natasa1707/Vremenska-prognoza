@@ -24,16 +24,16 @@
 <img src="https://i.imgur.com/7xUrigP.jpg" alt="icons" width="50%">
 <hr>
 <b>Struktura sajta:</b>
-<p>Sajt se sastoji od jedne web stranica.</p>
+<p>Sajt se sastoji od jedne web stranice.</p>
 <p>Sadrži sledeće elemente:</p>
 <ul>
 <li>Naslov (caption)</li>
 <li>Padajući meni (dropdown menu)</li>
 <li>Sadržaj:
-    <ol type="1">
-        <li>današnja prognoza (weather)</li>
-        <li>detaljnije informacije o današnjoj prognozi (today)</li>
-        <li>prognoza za narednih 5-dana (modalni prozor)</li> 
+    <ol>
+        <li type="1">današnja prognoza (weather)</li>
+        <li type="1">detaljnije informacije o današnjoj prognozi (today)</li>
+        <li type="1">prognoza za narednih 5-dana (modalni prozor)</li> 
     </ol>
 </li>
 <li>Footer</li>
