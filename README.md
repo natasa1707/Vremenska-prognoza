@@ -21,6 +21,6 @@ Ukoliko korisnik proverava vremenske uslove nakon zalaska sunca, pozadinska slik
 <hr>
 <b>Ikonice</b>
 <p>Korišćene ikonice za prikaz vremenskih uslova:</p>
-<img src=" https://i.imgur.com/7xUrigP.jpg" alt="icons">
+<img src="https://i.imgur.com/7xUrigP.jpg" alt="icons">
 <hr>
 <b>Struktura sajta:</p>
