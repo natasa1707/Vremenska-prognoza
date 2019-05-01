@@ -1,8 +1,8 @@
 # Vremenska-prognoza
 <hr>
-<b>Naziv projekta:</b> Vremenska prognoza glavnih gradova zemalja bivše Jugoslavije
+<b>Naziv projekta:</b> <span>Vremenska prognoza glavnih gradova zemalja bivše Jugoslavije<span>
 <br>
-<b>Tip projekta:</b> Završni projekat obuke za Front-End web programiranje
+<b>Tip projekta:</b> <span>Završni projekat obuke za Front-End web programiranje<span>
 <hr>
 <b>Opis</b>
 <br>
