@@ -16,8 +16,8 @@
 <li>Klikom na ikonicu <img src="images/icons/week.png" alt="week" width="30px"> otvara se modalni prozor i prikazuje se vremenska prognoza za narednih 5 dana u podne. Prikazuju se dan, datum, ikonica koja opisuje vremenske uslove i temperatura.</li>
 </ul>
 <b>Dodatni opis:</b>	
-<p>Pozadinska slika aplikacije se menja u zavisnosti od izabranog grada, za vremensku prognozu za Beograd, prikazuje se pozadinska slika Beograda.
-Ukoliko korisnik proverava vremenske uslove nakon zalaska sunca, pozadinska slika će biti slika izabranog grada noću.</p>
+<p>Pozadinska slika aplikacije se menja u zavisnosti od izabranog grada, za vremensku prognozu za Beograd, prikazuje se pozadinska slika Beograda.</p>
+<p>Ukoliko korisnik proverava vremenske uslove nakon zalaska sunca, pozadinska slika će biti slika izabranog grada noću.</p>
 <hr>
 <b>Ikonice</b>
 <p>Korišćene ikonice za prikaz vremenskih uslova:</p>
