@@ -1,6 +1,4 @@
 # Vremenska-prognoza
-Vremenska prognoza glavnih gradova zemalja bivše Jugoslavije.
-# Vremenska-prognoza
 <hr>
 <b>Naziv projekta:</b> Vremenska prognoza glavnih gradova zemalja ex-YU
 <br>
