@@ -1,10 +1,6 @@
-# Vremenska-prognoza
+# Naziv projekta: Vremenska prognoza glavnih gradova zemalja bivše Jugoslavije
 
-# Naziv projekta: 
-## Vremenska prognoza glavnih gradova zemalja bivše Jugoslavije
-
-#Tip projekta: 
-## Završni projekat obuke za Front-End web programiranje
+# Tip projekta: Završni projekat obuke za Front-End web programiranje
 
 ## Opis:
 
