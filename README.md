@@ -12,7 +12,7 @@
 <li>Prilikom učitavanja stranice prikazuje se kakvo će vreme biti danas u Beogradu.</li>
 <li>Korisnik može iz padajućeg menija “Izaberite grad” da izabere grad koji želi, a zatim će aplikacija prikazati podatke o vremenskoj prognozi tog grada.</li>
 <li>Osnovne karakteristike koje se prikazuju su: tačno vreme, datum, trenutna temperatura, ikonica koja opisuje vremenske uslove i kratak opis vremenskih uslova.</li>
-<li>Klikom na ikonicu  <img src="images/icons/today.png" alt="day" width="20px">prikazuju se detaljnije informacije prognoze za današnji dan: vlažnost vazduha, brzina vetra, vazdušni pritisak, vidljivost, vreme izlaska i zalaska sunca.</li>
+<li>Klikom na ikonicu  <img src="images/icons/today.png" alt="day" width="30px">prikazuju se detaljnije informacije prognoze za današnji dan: vlažnost vazduha, brzina vetra, vazdušni pritisak, vidljivost, vreme izlaska i zalaska sunca.</li>
 <li>Klikom na ikonicu <img src="images/icons/week.png" alt="week" width="30px"> otvara se modalni prozor i prikazuje se vremenska prognoza za narednih 5 dana u podne. Prikazuju se dan, datum, ikonica koja opisuje vremenske uslove i temperatura.</li>
 </ul>
 <b>Dodatni opis:</b>	
