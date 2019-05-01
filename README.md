@@ -28,7 +28,8 @@ Korišćene ikonice za prikaz vremenskih uslova:
 <img src="https://i.imgur.com/7xUrigP.jpg" alt="icons" width="50%">
 
 ## Struktura sajta:
-Sajt se sastoji od jedne web stranica.
+Sajt se sastoji od jedne web stranice.
+
 Sadrži sledeće elemente:
 - Naslov (caption)
 - Padajući meni (dropdown menu)
