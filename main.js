@@ -18,7 +18,7 @@ const citiesId = [
     3193044
 ];
 
-const city = document.getElementsByClassName('city');
+const city = document.querySelectorAll('.city');
 const todayDetails = document.getElementById('today-details');
 const apiUrl = 'https://api.openweathermap.org/data/2.5';
 const apiKey = 'APPID=3e182224c9ad92c8e0e3a37269ecc247';
@@ -51,10 +51,10 @@ setInterval(exactTime, 1000);
 }());
 
 // forecast for a selected city from the drop-down menu
-for (let i = 0; i < city.length; i++) {
+function selectedCityForecast(index) {
     const dropdownHide = document.getElementById('hide');
     const dropdownShow = document.getElementById('show');
-    city[i].onclick = function () {
+    city[index].onclick = function () {
         dropdownHide.style.display = 'none';
         dropdownShow.onmouseenter = function () {
             dropdownHide.style.display = 'block';
@@ -62,16 +62,18 @@ for (let i = 0; i < city.length; i++) {
         dropdownHide.onmouseleave = function () {
             dropdownHide.style.display = 'none';
         };
-
         todayDetails.style.display = 'none';
-
-        currentCity.innerHTML = citiesSR[i];
+        
+        currentCity.innerHTML = citiesSR[index];
 
         // API data for cities
-        getAPIDay(citiesId[i]);
-        getAPIWeek(citiesId[i]);
+        getAPIDay(citiesId[index]);
+        getAPIWeek(citiesId[index]);
     };
 }
+city.forEach(function (e, indexOfCity) {
+    selectedCityForecast(indexOfCity);
+});
 
 // API data for today
 function getAPIDay(town) {
