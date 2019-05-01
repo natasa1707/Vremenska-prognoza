@@ -55,7 +55,7 @@ body {
     justify-content: space-between;
 }
 
-.caption h1,
+.title,
 .caption span, 
 .degrees {
     font-size: 2rem;
@@ -93,7 +93,7 @@ footer {
 }
 
 /***** caption ******/
-.caption h1 {
+.title {
     margin-bottom: 0;
 }
 
