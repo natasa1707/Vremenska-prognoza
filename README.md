@@ -12,8 +12,8 @@
 <li>Prilikom učitavanja stranice prikazuje se kakvo će vreme biti danas u Beogradu.</li>
 <li>Korisnik može iz padajućeg menija “Izaberite grad” da izabere grad koji želi, a zatim će aplikacija prikazati podatke o vremenskoj prognozi tog grada.</li>
 <li>Osnovne karakteristike koje se prikazuju su: tačno vreme, datum, trenutna temperatura, ikonica koja opisuje vremenske uslove i kratak opis vremenskih uslova.</li>
-<li>Klikom na ikonicu  <img src="images/icons/day.png" alt="day">prikazuju se detaljnije informacije prognoze za današnji dan: vlažnost vazduha, brzina vetra, vazdušni pritisak, vidljivost, vreme izlaska i zalaska sunca.</li>
-<li>Klikom na ikonicu <img src="images/icons/week.png" alt="week"> otvara se modalni prozor i prikazuje se vremenska prognoza za narednih 5 dana u podne. Prikazuju se dan, datum, ikonica koja opisuje vremenske uslove i temperatura.</li>
+<li>Klikom na ikonicu  <img src="images/icons/today.png" alt="day" width="20px">prikazuju se detaljnije informacije prognoze za današnji dan: vlažnost vazduha, brzina vetra, vazdušni pritisak, vidljivost, vreme izlaska i zalaska sunca.</li>
+<li>Klikom na ikonicu <img src="images/icons/week.png" alt="week" width="20px"> otvara se modalni prozor i prikazuje se vremenska prognoza za narednih 5 dana u podne. Prikazuju se dan, datum, ikonica koja opisuje vremenske uslove i temperatura.</li>
 </ul>
 <b>Dodatni opis:</b>	
 <p>Pozadinska slika aplikacije se menja u zavisnosti od izabranog grada, za vremensku prognozu za Beograd, prikazuje se pozadinska slika Beograda.
@@ -21,7 +21,7 @@ Ukoliko korisnik proverava vremenske uslove nakon zalaska sunca, pozadinska slik
 <hr>
 <b>Ikonice</b>
 <p>Korišćene ikonice za prikaz vremenskih uslova:</p>
-<img src="https://i.imgur.com/7xUrigP.jpg" alt="icons">
+<img src="https://i.imgur.com/7xUrigP.jpg" alt="icons" width="50%">
 <hr>
 <b>Struktura sajta:</p>
 <p>Sajt se sastoji od jedne web stranica.</p>
