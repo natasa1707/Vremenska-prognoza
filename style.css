@@ -1,3 +1,7 @@
+:root {
+    font-size: 16px;
+}
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -51,9 +55,10 @@ body {
     justify-content: space-between;
 }
 
-.caption, 
+.caption h1,
+.caption span, 
 .degrees {
-    font-size: 2em;
+    font-size: 2rem;
 }
 
 .weather, 
@@ -80,12 +85,23 @@ footer {
     padding: 20px 30px;
 }
 
+.current-city,
+.dropdown,
+.five-days,
+.close {
+    font-size: 1.3rem;
+}
+
+/***** caption ******/
+.caption h1 {
+    margin-bottom: 0;
+}
+
 /****** dropdown menu ******/
 
 .dropdown {
     position: relative;
-    margin: auto;
-    font-size: 1.3em;
+    margin: 10px auto;
 }
 
 .dropdown-menu {
@@ -124,16 +140,11 @@ footer {
 
 .day, 
 .date {
-    font-size: 1em;
     margin: 3px;
 }
 
 .exact-time {
     padding-left: 5px;
-}
-
-.current-city {
-    font-size: 1.3em;
 }
 
 .degrees, 
@@ -163,16 +174,16 @@ footer {
     display: none; 
     position: fixed;
     z-index: 1;
-    padding-top: 40px;
     overflow: auto;
     left: 0;
-    top: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
 }
 
 .modal-content {
     position: relative;
+    top: 40px;
     margin: auto;
     padding: 0;
     width: 100%;
@@ -184,7 +195,6 @@ footer {
     top: 0;
     padding-right: 10px;
     color: darkmagenta;
-    font-size: 2em;
     font-weight: bold;
 }
 
@@ -196,7 +206,6 @@ footer {
 }
 .five-days {
     padding: 30px;
-    font-size: 1.3em;
 }
 
 .five-days img {
@@ -212,7 +221,7 @@ footer {
 
 .report {
     text-transform: uppercase;
-    font-size: 1.2em;
+    font-size: 1.2rem;
 }
 
 .daily, 
@@ -256,7 +265,7 @@ footer {
 /****** footer ******/
 
 footer {
-    line-height: 2.5em;
+    line-height: 2.5rem;
 }
 
 footer a {
@@ -270,16 +279,15 @@ footer a {
         width: 450px;
     }
     .weather, .today {
-        font-size: 1.2em;
+        font-size: 1.2rem;
     }
     .degrees {
-        font-size: 3em;
+        font-size: 4rem;
     }
-    .current-city {
-        font-size: 1.5em;
-    }
-    .five-days {
-        font-size: 1.8em;
+    .current-city, 
+    .five-days,
+    .close {
+        font-size: 1.8rem;
     }
     .five-days img {
         width: 80%;

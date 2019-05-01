@@ -1,14 +1,29 @@
 /*** CONFIG ****/
 
 const currentCity = document.getElementById('current-city');
-const citiesSR = ['Beograd', 'Ljubljana', 'Skoplje', 'Sarajevo', 'Zagreb', 'Podgorica'];
-const citiesId = [792680, 3196359, 785842, 3191281, 3337532, 3193044];
+const citiesSR = [
+    'Beograd',
+    'Ljubljana',
+    'Skoplje',
+    'Sarajevo',
+    'Zagreb',
+    'Podgorica'
+];
+const citiesId = [
+    792680,
+    3196359,
+    785842,
+    3191281,
+    3337532,
+    3193044
+];
 
 const city = document.getElementsByClassName('city');
 const todayDetails = document.getElementById('today-details');
+const apiUrl = 'https://api.openweathermap.org/data/2.5';
 const apiKey = 'APPID=3e182224c9ad92c8e0e3a37269ecc247';
+const proxy = 'https://proxy-requests.herokuapp.com';
 // const apiKey = 'APPID=f3244c91de515a8afa5193b51dba61d0'; // reserve
-const cors = 'https://cors-anywhere.herokuapp.com';
 
 /***** FUNCTIONS *****/
 
@@ -65,9 +80,8 @@ function getAPIDay(town) {
     const tempC = document.getElementById('degrees');
     const wetherIcon = document.getElementById('condition-icon');
 
-    $.getJSON(`${cors}/https://api.openweathermap.org/data/2.5/weather?id=${town}&${apiKey}`,
+    $.getJSON(`${proxy}/${apiUrl}/weather?id=${town}&${apiKey}`,
         function (info) {
-            console.log(info);
             dayName.innerHTML = timeDay(info.dt);
             currentDate.innerText = timeDate(info.dt);
             tempC.innerHTML = celsius(info.main.temp);
@@ -80,9 +94,8 @@ function getAPIDay(town) {
 
 // API data for the next 5 days
 function getAPIWeek(town) {
-    $.getJSON(`${cors}/https://api.openweathermap.org/data/2.5/forecast?id=${town}&${apiKey}`,
+    $.getJSON(`${proxy}/${apiUrl}/forecast?id=${town}&${apiKey}`,
         function (data) {
-            console.log(data);
             let dataList = data.list;
             let newList = [];
             // next days forecast for noon
@@ -98,7 +111,15 @@ function getAPIWeek(town) {
 // day of the week
 function timeDay(dataT){
     let dateMS = new Date(dataT * 1000);
-    const days = ['Nedelja','Ponedeljak','Utorak','Sreda','Četvrtak','Petak','Subota'];
+    const days = [
+        'Nedelja',
+        'Ponedeljak',
+        'Utorak',
+        'Sreda',
+        'Četvrtak',
+        'Petak',
+        'Subota'
+    ];
     return days[dateMS.getDay()];
 }
 
@@ -137,13 +158,8 @@ function condition(dataC){
 
 // sunrise & sunset
 function sun(dataSun) {
-    let hours = (Math.ceil(dataSun / 3600) % 24) + 1;
-    let minutes = Math.floor(dataSun / 60) % 60;
-
-    hours = (hours < 10) ? '0' + hours : hours;
-    minutes = (minutes < 10) ? '0' + minutes : minutes;
-
-    return `${hours}:${minutes}`;
+    let dataSunToString = new Date(dataSun*1000).toString();
+    return dataSunToString.split(' ')[4].split(':').slice(0, 2).join(':');
 }
 
 function detailsForToday(dataD){
@@ -166,15 +182,15 @@ function detailsForToday(dataD){
     </div>
     <div>
         <div class='today-p flexbox'>
-            <img src='images/icons/visibility.png' alt='izlazak_sunca'>
+            <img src='images/icons/visibility.png' alt='vidljivost'>
             <span>${Math.round(dataD.visibility/1000)} km</span>
         </div>
         <div class='today-p flexbox'>
-            <img src='images/icons/sunrise.png' alt='zalazak_sunca'>
+            <img src='images/icons/sunrise.png' alt='izlazak_sunca'>
             <span>${sun(dataD.sys.sunrise)}</span>
         </div>
         <div class='today-p flexbox'>
-            <img src='images/icons/sunset.png' alt='sunset'>
+            <img src='images/icons/sunset.png' alt='zalazak_sunca'>
             <span>${sun(dataD.sys.sunset)}</span>
         </div>
     </div>`;
@@ -201,19 +217,21 @@ function weeklyForecast(dataW) {
     const close = document.getElementsByClassName("close")[0];
     close.onclick = function () {
         weeklyModal.style.display = "none";
-    }
+    };
     window.onclick = function (event) {
         if (event.target == weeklyModal) {
             weeklyModal.style.display = "none";
         }
-    }
+    };
 }
 
 function backgroundImage(dataSunrise, dataSunset, cityName) {
     let s = (new Date().getTime() / 1000).toFixed();
-    if (s > +dataSunrise+3600 && s < +dataSunset+3600) {
-        document.body.style.backgroundImage = `url('images/background-day/${cityName}.jpg')`;
+    const bd = 'images/background-day';
+    const bn = 'images/background-night';
+    if (+s > +dataSunrise && +s < +dataSunset) {
+        document.body.style.backgroundImage = `url('${bd}/${cityName}.jpg')`;
     } else {
-        document.body.style.backgroundImage = `url('images/background-night/${cityName}-n.jpg')`;
+        document.body.style.backgroundImage = `url('${bn}/${cityName}-n.jpg')`;
     }
 }
