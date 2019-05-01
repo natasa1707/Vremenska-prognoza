@@ -34,6 +34,7 @@ Sadrži sledeće elemente:
     1. današnja prognoza (weather)
     2. detaljnije informacije o današnjoj prognozi (today)
     3. prognoza za narednih 5-dana (modalni prozor) 
+- Klik za detalje (report)
 - Footer
 - Pozadina (background)
 
